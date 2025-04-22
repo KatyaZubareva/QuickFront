@@ -1,0 +1,13 @@
+export default defineNuxtConfig({
+    modules: [
+      <% if (project.features.includes('pinia')) { %>'@pinia/nuxt',<% } %>
+    ],
+    app: {
+      head: {
+        title: '<%= project.projectName %>',
+        meta: [
+          { name: 'description', content: '<%= project.projectDescription %>' }
+        ]
+      }
+    }
+  })

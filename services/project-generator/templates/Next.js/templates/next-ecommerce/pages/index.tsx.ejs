@@ -1,0 +1,16 @@
+import { NextPage } from 'next'
+import CartProvider from '../components/CartProvider'
+import ProductList from '../components/ProductList'
+
+const HomePage: NextPage = () => {
+  return (
+    <CartProvider>
+      <main className="container mx-auto py-8">
+        <h1 className="text-3xl font-bold mb-8"><%= project.projectName %></h1>
+        <ProductList />
+      </main>
+    </CartProvider>
+  )
+}
+
+export default HomePage

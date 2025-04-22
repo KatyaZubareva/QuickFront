@@ -1,0 +1,40 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "composite": true,
+    "declaration": true, 
+    "emitDeclarationOnly": false,
+    "paths": {
+      "@data/*": ["data/*"],
+      "@types/*": ["types/*"],
+      "@utils/*": ["utils/*"]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types",
+      "./src/utils"
+    ],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true  // Added to prevent root tsconfig from emitting
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "vite.config.ts",
+    "src/types/**/*.d.ts",
+    "src/utils/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.d.ts"
+  ],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
